@@ -9,7 +9,7 @@ public class controller implements ActionListener {
 	private JTextField searchTermTextField = new JTextField(26);
 	private DefaultTableModel model;
 
-	public Controller(JTextField searchTermTextField, DefaultTableModel model) {
+	public controller(JTextField searchTermTextField, DefaultTableModel model) {
 		super();
 		this.searchTermTextField = searchTermTextField;
 		this.model = model;
