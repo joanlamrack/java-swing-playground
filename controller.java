@@ -20,9 +20,9 @@ public class controller implements ActionListener {
 
 		String searchTerm = searchTermTextField.getText();
 		if (searchTerm != null && !"".equals(searchTerm)) {
-			Object[][] newData = new Object[Constants.DATA.length][];
+			Object[][] newData = new Object[constants.DATA.length][];
 			int idx = 0;
-			for (Object[] o : Constants.DATA) {
+			for (Object[] o : constants.DATA) {
 				if ("*".equals(searchTerm.trim())) {
 					newData[idx++] = o;
 				} else {
@@ -31,7 +31,7 @@ public class controller implements ActionListener {
 					}
 				}
 			}
-			model.setDataVector(newData, Constants.TABLE_HEADER);
+			model.setDataVector(newData, constants.TABLE_HEADER);
 		} else {
 			JOptionPane.showMessageDialog(null, "Search term is empty", "Error", JOptionPane.ERROR_MESSAGE);
 		}

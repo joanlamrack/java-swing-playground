@@ -1,3 +1,5 @@
+import java.awt.Dimension;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -7,6 +9,7 @@ import javax.swing.JSplitPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
+import javax.swing.table.TableModel;
 
 public class view{
 	public view(){
@@ -17,13 +20,13 @@ public class view{
 
 		//Create table model
 
-		Model model = new Model();
-		table.setModel(model);
+		model model2 = new model();
+		table.setModel(model2);
 
 		//Create Controller
 
-		Controller controller = new Controller(searchTermTextField, model);
-		filterButton.addActionListener(controller);
+		controller controller2 = new controller(searchTermTextField, model2);
+		filterButton.addActionListener(controller2);
 
 		// Set the view layout
 
@@ -32,7 +35,7 @@ public class view{
 		ctrlPane.add(filterButton);
 		
 		JScrollPane tableScrollPane = new JScrollPane(table);
-		tableScrollPane.setPreferredSize(new Dimension(700), 182 );
+		tableScrollPane.setPreferredSize(new  Dimension(700, 182) );
 		tableScrollPane.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Market Movers",TitledBorder.CENTER, TitledBorder.TOP));
 
 		JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, ctrlPane, tableScrollPane);
